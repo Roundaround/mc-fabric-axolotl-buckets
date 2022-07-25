@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "axolotlbuckets",
+  "version": "${version}",
+  "name": "Axolotl Buckets",
+  "description": "Show the color and age of axolotls when in buckets.",
+  "authors": [
+    "Roundaround"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/roundaround-axolotl-buckets",
+    "sources": "https://github.com/Roundaround/mc-fabric-axolotl-buckets",
+    "issues": "https://github.com/Roundaround/mc-fabric-axolotl-buckets/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/axolotlbuckets/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "me.roundaround.axolotlbuckets.AxolotlBucketsMod"
+    ]
+  },
+  "mixins": [
+    "axolotlbuckets.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.13.3",
+    "minecraft": "1.19.x",
+    "java": ">=17"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "axolotlbuckets.link.original": "https://www.planetminecraft.com/texture-pack/colored-axolotl-buckets-with-babies/"
+      }
+    }
+  }
+}

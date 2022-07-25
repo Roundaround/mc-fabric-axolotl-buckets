@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.roundaround.axolotlbuckets.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [],
+  "client": ["EntityBucketItemAccessor"],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
