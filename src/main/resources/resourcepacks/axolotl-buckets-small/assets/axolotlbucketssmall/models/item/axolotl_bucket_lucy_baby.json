@@ -1,0 +1,6 @@
+{
+  "parent": "item/smaller_util",
+  "textures": {
+      "layer0": "axolotlbuckets:item/axolotl_bucket_lucy_baby"
+  }
+}
