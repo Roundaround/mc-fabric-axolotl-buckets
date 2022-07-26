@@ -5,6 +5,9 @@ import org.apache.logging.log4j.Logger;
 
 import me.roundaround.axolotlbuckets.mixin.EntityBucketItemAccessor;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.entity.Bucketable;
@@ -57,5 +60,13 @@ public final class AxolotlBucketsMod implements ClientModInitializer {
 
           return ((LivingEntity) entity).isBaby() ? 1f : 0f;
         });
+
+    FabricLoader.getInstance().getModContainer(MOD_ID).ifPresent((container) -> {
+      ResourceManagerHelper.registerBuiltinResourcePack(
+          new Identifier(MOD_ID, "axolotl-buckets-small"),
+          container,
+          "Smaller Axolotl Buckets",
+          ResourcePackActivationType.NORMAL);
+    });
   }
 }
