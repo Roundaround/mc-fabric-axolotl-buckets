@@ -17,6 +17,7 @@ import net.minecraft.entity.passive.AxolotlEntity;
 import net.minecraft.item.EntityBucketItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public final class AxolotlBucketsMod implements ClientModInitializer {
@@ -65,7 +66,7 @@ public final class AxolotlBucketsMod implements ClientModInitializer {
       ResourceManagerHelper.registerBuiltinResourcePack(
           new Identifier(MOD_ID, "axolotl-buckets-small"),
           container,
-          "Smaller Axolotl Buckets",
+          Text.literal("Smaller Axolotl Buckets"),
           ResourcePackActivationType.NORMAL);
     });
   }
