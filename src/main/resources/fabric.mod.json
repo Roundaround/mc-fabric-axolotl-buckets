@@ -3,12 +3,12 @@
   "id": "axolotlbuckets",
   "version": "${version}",
   "name": "Axolotl Buckets",
-  "description": "Show the color and age of axolotls when in buckets.",
+  "description": "Show the color and age of axolotls when in buckets.\n${library}",
   "authors": [
     "Roundaround"
   ],
   "contact": {
-    "homepage": "https://modrinth.com/mod/roundaround-axolotl-buckets",
+    "homepage": "https://modrinth.com/mod/axolotl-buckets",
     "sources": "https://github.com/Roundaround/mc-fabric-axolotl-buckets",
     "issues": "https://github.com/Roundaround/mc-fabric-axolotl-buckets/issues"
   },
@@ -25,8 +25,8 @@
   ],
   "depends": {
     "fabricloader": ">=0.13.3",
-    "fabric": "*",
-    "minecraft": "1.19.x",
+    "fabric-api": "*",
+    "minecraft": ">=1.20-beta.1 <1.21",
     "java": ">=17"
   },
   "custom": {

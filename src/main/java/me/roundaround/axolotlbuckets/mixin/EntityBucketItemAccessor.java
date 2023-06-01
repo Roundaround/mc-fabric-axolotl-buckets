@@ -9,5 +9,5 @@ import net.minecraft.item.EntityBucketItem;
 @Mixin(EntityBucketItem.class)
 public interface EntityBucketItemAccessor {
   @Accessor
-  public EntityType<?> getEntityType();
+  EntityType<?> getEntityType();
 }
