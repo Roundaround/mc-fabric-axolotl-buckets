@@ -4,7 +4,10 @@
   "package": "me.roundaround.axolotlbuckets.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [],
-  "client": ["EntityBucketItemAccessor"],
+  "client": [
+    "EntityBucketItemAccessor",
+    "ModelPredicateProviderRegistryAccessor"
+  ],
   "server": [],
   "injectors": {
     "defaultRequire": 1

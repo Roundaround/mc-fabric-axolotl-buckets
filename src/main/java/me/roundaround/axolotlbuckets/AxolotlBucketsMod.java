@@ -1,15 +1,12 @@
 package me.roundaround.axolotlbuckets;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import me.roundaround.axolotlbuckets.mixin.EntityBucketItemAccessor;
+import me.roundaround.axolotlbuckets.mixin.ModelPredicateProviderRegistryAccessor;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.entity.Bucketable;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -19,6 +16,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public final class AxolotlBucketsMod implements ClientModInitializer {
   public static final String MOD_ID = "axolotlbuckets";
@@ -28,7 +27,8 @@ public final class AxolotlBucketsMod implements ClientModInitializer {
 
   @Override
   public void onInitializeClient() {
-    ModelPredicateProviderRegistry.register(Items.AXOLOTL_BUCKET, new Identifier("variant"),
+    ModelPredicateProviderRegistryAccessor.invokeRegister(Items.AXOLOTL_BUCKET,
+        new Identifier("variant"),
         (itemStack, world, holder, seed) -> {
           Item item = itemStack.getItem();
           if (!(item instanceof EntityBucketItem)) {
@@ -45,7 +45,8 @@ public final class AxolotlBucketsMod implements ClientModInitializer {
           return ((AxolotlEntity) entity).getVariant().ordinal() / 10f;
         });
 
-    ModelPredicateProviderRegistry.register(Items.AXOLOTL_BUCKET, new Identifier("baby"),
+    ModelPredicateProviderRegistryAccessor.invokeRegister(Items.AXOLOTL_BUCKET,
+        new Identifier("baby"),
         (itemStack, world, holder, seed) -> {
           Item item = itemStack.getItem();
           if (!(item instanceof EntityBucketItem)) {
@@ -63,8 +64,8 @@ public final class AxolotlBucketsMod implements ClientModInitializer {
         });
 
     FabricLoader.getInstance().getModContainer(MOD_ID).ifPresent((container) -> {
-      ResourceManagerHelper.registerBuiltinResourcePack(
-          new Identifier(MOD_ID, "axolotl-buckets-small"),
+      ResourceManagerHelper.registerBuiltinResourcePack(new Identifier(MOD_ID,
+              "axolotl-buckets-small"),
           container,
           Text.literal("Smaller Axolotl Buckets"),
           ResourcePackActivationType.NORMAL);
