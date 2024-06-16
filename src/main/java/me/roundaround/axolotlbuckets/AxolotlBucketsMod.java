@@ -28,7 +28,7 @@ public final class AxolotlBucketsMod implements ClientModInitializer {
   @Override
   public void onInitializeClient() {
     ModelPredicateProviderRegistryAccessor.invokeRegister(Items.AXOLOTL_BUCKET,
-        new Identifier("variant"),
+        Identifier.of("variant"),
         (itemStack, world, holder, seed) -> {
           Item item = itemStack.getItem();
           if (!(item instanceof EntityBucketItem)) {
@@ -46,7 +46,7 @@ public final class AxolotlBucketsMod implements ClientModInitializer {
         });
 
     ModelPredicateProviderRegistryAccessor.invokeRegister(Items.AXOLOTL_BUCKET,
-        new Identifier("baby"),
+        Identifier.of("baby"),
         (itemStack, world, holder, seed) -> {
           Item item = itemStack.getItem();
           if (!(item instanceof EntityBucketItem)) {
@@ -64,7 +64,7 @@ public final class AxolotlBucketsMod implements ClientModInitializer {
         });
 
     FabricLoader.getInstance().getModContainer(MOD_ID).ifPresent((container) -> {
-      ResourceManagerHelper.registerBuiltinResourcePack(new Identifier(MOD_ID,
+      ResourceManagerHelper.registerBuiltinResourcePack(Identifier.of(MOD_ID,
               "axolotl-buckets-small"),
           container,
           Text.literal("Smaller Axolotl Buckets"),
