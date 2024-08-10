@@ -27,7 +27,7 @@ public final class AxolotlBucketsMod implements ClientModInitializer {
 
   @Override
   public void onInitializeClient() {
-    ModelPredicateProviderRegistryAccessor.invokeRegister(Items.AXOLOTL_BUCKET, new Identifier("variant"),
+    ModelPredicateProviderRegistryAccessor.invokeRegister(Items.AXOLOTL_BUCKET, Identifier.ofVanilla("variant"),
         (itemStack, world, holder, seed) -> {
           AxolotlEntity axolotl = getAxolotlRef(itemStack, world, holder, seed);
           if (axolotl == null) {
@@ -38,7 +38,7 @@ public final class AxolotlBucketsMod implements ClientModInitializer {
         }
     );
 
-    ModelPredicateProviderRegistryAccessor.invokeRegister(Items.AXOLOTL_BUCKET, new Identifier("baby"),
+    ModelPredicateProviderRegistryAccessor.invokeRegister(Items.AXOLOTL_BUCKET, Identifier.ofVanilla("baby"),
         (itemStack, world, holder, seed) -> {
           AxolotlEntity axolotl = getAxolotlRef(itemStack, world, holder, seed);
           if (axolotl == null) {
@@ -50,7 +50,7 @@ public final class AxolotlBucketsMod implements ClientModInitializer {
     );
 
     FabricLoader.getInstance().getModContainer(MOD_ID).ifPresent((container) -> {
-      ResourceManagerHelper.registerBuiltinResourcePack(new Identifier(MOD_ID, "axolotl-buckets-small"), container,
+      ResourceManagerHelper.registerBuiltinResourcePack(Identifier.of(MOD_ID, "axolotl-buckets-small"), container,
           Text.literal("Smaller Axolotl Buckets"), ResourcePackActivationType.NORMAL
       );
     });
