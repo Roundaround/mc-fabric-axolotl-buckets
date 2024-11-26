@@ -20,11 +20,8 @@
       "me.roundaround.axolotlbuckets.AxolotlBucketsMod"
     ]
   },
-  "mixins": [
-    "axolotlbuckets.mixins.json"
-  ],
   "depends": {
-    "fabricloader": "*",
+    "fabric-api": "*",
     "minecraft": "1.21.*"
   },
   "custom": {
