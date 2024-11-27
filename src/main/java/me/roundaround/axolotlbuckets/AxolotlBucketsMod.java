@@ -21,7 +21,7 @@ public final class AxolotlBucketsMod implements ClientModInitializer {
     );
 
     ModelPredicateProviderRegistry.register(Items.AXOLOTL_BUCKET, Identifier.ofVanilla("baby"),
-        (itemStack, world, holder, seed) -> getEntityNbtInt(itemStack, "Age") >= 0 ? 1f : 0f
+        (itemStack, world, holder, seed) -> getEntityNbtInt(itemStack, "Age") >= 0 ? 0f : 1f
     );
 
     BuiltinResourcePack.register(MOD_ID, "axolotl-buckets-small", Text.translatable("axolotlbuckets.resource.smaller"));
