@@ -1,4 +1,4 @@
-package me.roundaround.axolotlbuckets;
+package me.roundaround.axolotlbuckets.client;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.client.render.item.property.select.SelectProperty;

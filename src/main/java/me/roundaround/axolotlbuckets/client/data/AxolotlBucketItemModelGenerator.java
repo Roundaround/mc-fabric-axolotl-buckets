@@ -1,8 +1,8 @@
-package me.roundaround.axolotlbuckets.data;
+package me.roundaround.axolotlbuckets.client.data;
 
-import me.roundaround.axolotlbuckets.AxolotlBucketsMod;
-import me.roundaround.axolotlbuckets.AxolotlVariantProperty;
-import me.roundaround.axolotlbuckets.BabyProperty;
+import me.roundaround.axolotlbuckets.client.AxolotlBucketsClientMod;
+import me.roundaround.axolotlbuckets.client.AxolotlVariantProperty;
+import me.roundaround.axolotlbuckets.client.BabyProperty;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.client.data.*;
@@ -39,7 +39,7 @@ public class AxolotlBucketItemModelGenerator extends FabricModelProvider {
 
     Model model = Models.GENERATED;
     if (this.small) {
-      model = new Model(Optional.of(Identifier.of(AxolotlBucketsMod.MOD_ID, "item/smaller_util")), Optional.empty(),
+      model = new Model(Optional.of(Identifier.of(AxolotlBucketsClientMod.MOD_ID, "item/smaller_util")), Optional.empty(),
           TextureKey.LAYER0
       );
     }

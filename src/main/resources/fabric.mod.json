@@ -17,10 +17,10 @@
   "environment": "*",
   "entrypoints": {
     "fabric-datagen": [
-      "me.roundaround.axolotlbuckets.data.AxolotlBucketsDataGenerator"
+      "me.roundaround.axolotlbuckets.client.data.AxolotlBucketsClientDataGenerator"
     ],
     "client": [
-      "me.roundaround.axolotlbuckets.AxolotlBucketsMod"
+      "me.roundaround.axolotlbuckets.client.AxolotlBucketsClientMod"
     ]
   },
   "depends": {
