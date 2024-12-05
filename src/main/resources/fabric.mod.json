@@ -14,8 +14,11 @@
   },
   "license": "MIT",
   "icon": "assets/axolotlbuckets/icon.png",
-  "environment": "client",
+  "environment": "*",
   "entrypoints": {
+    "fabric-datagen": [
+      "me.roundaround.axolotlbuckets.data.AxolotlBucketsDataGenerator"
+    ],
     "client": [
       "me.roundaround.axolotlbuckets.AxolotlBucketsMod"
     ]
