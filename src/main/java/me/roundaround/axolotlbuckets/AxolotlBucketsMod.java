@@ -9,12 +9,13 @@ import net.minecraft.util.Identifier;
 
 public final class AxolotlBucketsMod implements ClientModInitializer {
   public static final String MOD_ID = "axolotlbuckets";
+  public static final String RESOURCE_PACK_ID = "axolotl-buckets-small";
 
   @Override
   public void onInitializeClient() {
-    SelectProperties.ID_MAPPER.put(Identifier.ofVanilla("variant"), AxolotlVariantProperty.TYPE);
-    BooleanProperties.ID_MAPPER.put(Identifier.ofVanilla("age"), BabyProperty.CODEC);
+    SelectProperties.ID_MAPPER.put(Identifier.of(MOD_ID, "variant"), AxolotlVariantProperty.TYPE);
+    BooleanProperties.ID_MAPPER.put(Identifier.of(MOD_ID, "baby"), BabyProperty.CODEC);
 
-    BuiltinResourcePack.register(MOD_ID, "axolotl-buckets-small", Text.translatable("axolotlbuckets.resource.smaller"));
+    BuiltinResourcePack.register(MOD_ID, RESOURCE_PACK_ID, Text.translatable("axolotlbuckets.resource.smaller"));
   }
 }

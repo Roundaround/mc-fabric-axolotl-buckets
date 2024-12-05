@@ -1,0 +1,96 @@
+{
+  "model": {
+    "type": "minecraft:condition",
+    "on_false": {
+      "type": "minecraft:select",
+      "cases": [
+        {
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/axolotl_bucket_lucy"
+          },
+          "when": "lucy"
+        },
+        {
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/axolotl_bucket_wild"
+          },
+          "when": "wild"
+        },
+        {
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/axolotl_bucket_gold"
+          },
+          "when": "gold"
+        },
+        {
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/axolotl_bucket_cyan"
+          },
+          "when": "cyan"
+        },
+        {
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/axolotl_bucket_blue"
+          },
+          "when": "blue"
+        }
+      ],
+      "fallback": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/axolotl_bucket"
+      },
+      "property": "axolotlbuckets:variant"
+    },
+    "on_true": {
+      "type": "minecraft:select",
+      "cases": [
+        {
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/axolotl_bucket_lucy_baby"
+          },
+          "when": "lucy"
+        },
+        {
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/axolotl_bucket_wild_baby"
+          },
+          "when": "wild"
+        },
+        {
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/axolotl_bucket_gold_baby"
+          },
+          "when": "gold"
+        },
+        {
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/axolotl_bucket_cyan_baby"
+          },
+          "when": "cyan"
+        },
+        {
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/axolotl_bucket_blue_baby"
+          },
+          "when": "blue"
+        }
+      ],
+      "fallback": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/axolotl_bucket"
+      },
+      "property": "axolotlbuckets:variant"
+    },
+    "property": "axolotlbuckets:baby"
+  }
+}

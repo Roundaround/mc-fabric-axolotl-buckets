@@ -1,0 +1,6 @@
+{
+  "parent": "axolotlbuckets:item/smaller_util",
+  "textures": {
+    "layer0": "minecraft:item/axolotl_bucket_gold"
+  }
+}
