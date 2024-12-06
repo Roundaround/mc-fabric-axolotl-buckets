@@ -19,6 +19,9 @@
     "fabric-datagen": [
       "me.roundaround.axolotlbuckets.client.data.AxolotlBucketsClientDataGenerator"
     ],
+    "main": [
+      "me.roundaround.axolotlbuckets.AxolotlBucketsMod"
+    ],
     "client": [
       "me.roundaround.axolotlbuckets.client.AxolotlBucketsClientMod"
     ]

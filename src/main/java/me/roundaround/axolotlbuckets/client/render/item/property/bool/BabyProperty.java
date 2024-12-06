@@ -1,6 +1,8 @@
-package me.roundaround.axolotlbuckets.client;
+package me.roundaround.axolotlbuckets.client.render.item.property.bool;
 
 import com.mojang.serialization.MapCodec;
+import me.roundaround.axolotlbuckets.AxolotlBucketsMod;
+import net.minecraft.client.render.item.property.bool.BooleanProperties;
 import net.minecraft.client.render.item.property.bool.BooleanProperty;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.component.DataComponentTypes;
@@ -9,6 +11,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ModelTransformationMode;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.util.Identifier;
 
 public record BabyProperty() implements BooleanProperty {
   private static final String NBT_AGE = "Age";
@@ -26,5 +29,9 @@ public record BabyProperty() implements BooleanProperty {
   @Override
   public MapCodec<? extends BooleanProperty> getCodec() {
     return CODEC;
+  }
+
+  public static void register() {
+    BooleanProperties.ID_MAPPER.put(Identifier.of(AxolotlBucketsMod.MOD_ID, "baby"), CODEC);
   }
 }

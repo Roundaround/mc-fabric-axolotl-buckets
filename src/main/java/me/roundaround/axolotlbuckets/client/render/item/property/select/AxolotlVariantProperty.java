@@ -1,6 +1,8 @@
-package me.roundaround.axolotlbuckets.client;
+package me.roundaround.axolotlbuckets.client.render.item.property.select;
 
 import com.mojang.serialization.MapCodec;
+import me.roundaround.axolotlbuckets.AxolotlBucketsMod;
+import net.minecraft.client.render.item.property.select.SelectProperties;
 import net.minecraft.client.render.item.property.select.SelectProperty;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.component.DataComponentTypes;
@@ -11,6 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ModelTransformationMode;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
+import net.minecraft.util.Identifier;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -47,5 +50,9 @@ public record AxolotlVariantProperty() implements SelectProperty<AxolotlEntity.V
   @Override
   public Type<? extends SelectProperty<AxolotlEntity.Variant>, AxolotlEntity.Variant> getType() {
     return TYPE;
+  }
+
+  public static void register() {
+    SelectProperties.ID_MAPPER.put(Identifier.of(AxolotlBucketsMod.MOD_ID, "variant"), TYPE);
   }
 }

@@ -1,10 +1,10 @@
-// 1.21.4	2024-12-05T11:49:26.078909	Axolotl Buckets/Model Definitions
+// 1.21.4	2024-12-06T15:58:22.3387246	Axolotl Buckets/Model Definitions
 81b6cfcf6136ce9e78a0c6993beceadeec267f5e assets\minecraft\models\item\axolotl_bucket_gold.json
-44008bd6961a08b57d231b95df5764a50643c6ac assets\minecraft\models\item\axolotl_bucket_lucy_baby.json
+493f7ec20df0c4ea5c82c0896d55cd460450464d assets\minecraft\models\item\axolotl_bucket_lucy_baby.json
 b800363de16d7773ccdc08d7233385db451bf4ff assets\minecraft\items\axolotl_bucket.json
-dd7604ccc36ae018ebe10ca3765771c46232e737 assets\minecraft\models\item\axolotl_bucket_lucy.json
-809c05544f3110261b93ad2bb3d3cdb3830498db assets\minecraft\models\item\axolotl_bucket_gold_baby.json
+5b0f3e71d56c091432fe3acd61ba7f92459a3dea assets\minecraft\models\item\axolotl_bucket_lucy.json
 30dbc91843c8be4ccfde03e14303213c84390a06 assets\minecraft\models\item\axolotl_bucket_blue_baby.json
+809c05544f3110261b93ad2bb3d3cdb3830498db assets\minecraft\models\item\axolotl_bucket_gold_baby.json
 d7be9684d21d5afc0c0dd116079a377651359aed assets\minecraft\models\item\axolotl_bucket_blue.json
 f13f7115dc224d6884f821e5ba750d0c0baf3452 assets\minecraft\models\item\axolotl_bucket_wild_baby.json
 d0446dc28483944f738266d14c0f3f94a2a3acfa assets\minecraft\models\item\axolotl_bucket_wild.json

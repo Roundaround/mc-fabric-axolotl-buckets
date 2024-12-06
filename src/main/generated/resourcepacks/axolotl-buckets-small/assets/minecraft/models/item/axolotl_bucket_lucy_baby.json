@@ -1,6 +1,6 @@
 {
   "parent": "axolotlbuckets:item/smaller_util",
   "textures": {
-    "layer0": "minecraft:item/axolotl_bucket_lucy_baby"
+    "layer0": "minecraft:item/axolotl_bucket_baby"
   }
 }

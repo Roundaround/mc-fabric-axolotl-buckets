@@ -1,5 +1,6 @@
 package me.roundaround.axolotlbuckets.client.data;
 
+import me.roundaround.axolotlbuckets.AxolotlBucketsMod;
 import me.roundaround.axolotlbuckets.client.AxolotlBucketsClientMod;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
@@ -13,7 +14,7 @@ public class AxolotlBucketsClientDataGenerator implements DataGeneratorEntrypoin
     pack.addProvider((FabricDataOutput output) -> new AxolotlBucketItemModelGenerator(output, false));
 
     final FabricDataGenerator.Pack resourcePack = generator.createBuiltinResourcePack(
-        Identifier.of(AxolotlBucketsClientMod.MOD_ID, AxolotlBucketsClientMod.RESOURCE_PACK_ID));
+        Identifier.of(AxolotlBucketsMod.MOD_ID, AxolotlBucketsClientMod.RESOURCE_PACK_ID));
     resourcePack.addProvider((FabricDataOutput output) -> new AxolotlBucketItemModelGenerator(output, true));
   }
 }
