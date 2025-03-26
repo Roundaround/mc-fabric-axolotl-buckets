@@ -1,13 +1,14 @@
 package me.roundaround.axolotlbuckets.client.data;
 
-import me.roundaround.axolotlbuckets.AxolotlBucketsMod;
 import me.roundaround.axolotlbuckets.client.render.item.property.bool.BabyProperty;
-import me.roundaround.axolotlbuckets.client.render.item.property.select.AxolotlVariantProperty;
+import me.roundaround.axolotlbuckets.generated.Constants;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.client.data.*;
 import net.minecraft.client.render.item.model.ItemModel;
 import net.minecraft.client.render.item.model.SelectItemModel;
+import net.minecraft.client.render.item.property.select.ComponentSelectProperty;
+import net.minecraft.component.DataComponentTypes;
 import net.minecraft.data.DataWriter;
 import net.minecraft.entity.passive.AxolotlEntity;
 import net.minecraft.item.Item;
@@ -39,7 +40,9 @@ public class AxolotlBucketItemModelGenerator extends FabricModelProvider {
 
     Model model = Models.GENERATED;
     if (this.small) {
-      model = new Model(Optional.of(Identifier.of(AxolotlBucketsMod.MOD_ID, "item/smaller_util")), Optional.empty(),
+      model = new Model(
+          Optional.of(Identifier.of(Constants.MOD_ID, "item/smaller_util")),
+          Optional.empty(),
           TextureKey.LAYER0
       );
     }
@@ -48,25 +51,40 @@ public class AxolotlBucketItemModelGenerator extends FabricModelProvider {
     ArrayList<SelectItemModel.SwitchCase<AxolotlEntity.Variant>> babySwitchCases = new ArrayList<>();
 
     for (AxolotlEntity.Variant variant : AxolotlEntity.Variant.values()) {
-      String modelSuffix = "_" + variant.getName();
+      String modelSuffix = "_" + variant.getId();
       String textureSuffix = variant.equals(AxolotlEntity.Variant.LUCY) ? "" : modelSuffix;
 
-      Identifier adultModel = model.upload(ModelIds.getItemSubModelId(item, modelSuffix),
-          TextureMap.layer0(TextureMap.getSubId(item, textureSuffix)), generator.modelCollector
+      Identifier adultModel = model.upload(
+          ModelIds.getItemSubModelId(item, modelSuffix),
+          TextureMap.layer0(TextureMap.getSubId(item, textureSuffix)),
+          generator.modelCollector
       );
       adultSwitchCases.add(ItemModels.switchCase(variant, ItemModels.basic(adultModel)));
 
-      Identifier babyModel = model.upload(ModelIds.getItemSubModelId(item, modelSuffix + "_baby"),
-          TextureMap.layer0(TextureMap.getSubId(item, textureSuffix + "_baby")), generator.modelCollector
+      Identifier babyModel = model.upload(
+          ModelIds.getItemSubModelId(item, modelSuffix + "_baby"),
+          TextureMap.layer0(TextureMap.getSubId(item, textureSuffix + "_baby")),
+          generator.modelCollector
       );
       babySwitchCases.add(ItemModels.switchCase(variant, ItemModels.basic(babyModel)));
     }
 
     if (!this.small) {
-      generator.output.accept(item, ItemModels.condition(new BabyProperty(),
-          ItemModels.select(new AxolotlVariantProperty(), unbaked, babySwitchCases),
-          ItemModels.select(new AxolotlVariantProperty(), unbaked, adultSwitchCases)
-      ));
+      generator.output.accept(
+          item, ItemModels.condition(
+              new BabyProperty(),
+              ItemModels.select(
+                  new ComponentSelectProperty<>(DataComponentTypes.AXOLOTL_VARIANT),
+                  unbaked,
+                  babySwitchCases
+              ),
+              ItemModels.select(
+                  new ComponentSelectProperty<>(DataComponentTypes.AXOLOTL_VARIANT),
+                  unbaked,
+                  adultSwitchCases
+              )
+          )
+      );
     }
   }
 

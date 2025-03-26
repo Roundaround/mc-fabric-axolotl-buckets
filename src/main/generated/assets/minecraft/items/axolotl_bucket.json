@@ -40,11 +40,12 @@
           "when": "blue"
         }
       ],
+      "component": "minecraft:axolotl/variant",
       "fallback": {
         "type": "minecraft:model",
         "model": "minecraft:item/axolotl_bucket"
       },
-      "property": "axolotlbuckets:variant"
+      "property": "minecraft:component"
     },
     "on_true": {
       "type": "minecraft:select",
@@ -85,11 +86,12 @@
           "when": "blue"
         }
       ],
+      "component": "minecraft:axolotl/variant",
       "fallback": {
         "type": "minecraft:model",
         "model": "minecraft:item/axolotl_bucket"
       },
-      "property": "axolotlbuckets:variant"
+      "property": "minecraft:component"
     },
     "property": "axolotlbuckets:baby"
   }

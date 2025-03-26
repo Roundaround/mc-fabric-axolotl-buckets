@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "axolotlbuckets",
+  "id": "${modId}",
   "version": "${version}",
   "name": "Axolotl Buckets",
-  "description": "Show the color and age of axolotls when in buckets.\n${library}",
+  "description": "Show the color and age of axolotls when in buckets.",
   "authors": [
     "Roundaround"
   ],
@@ -13,22 +13,13 @@
     "issues": "https://github.com/Roundaround/mc-fabric-axolotl-buckets/issues"
   },
   "license": "MIT",
-  "icon": "assets/axolotlbuckets/icon.png",
-  "environment": "*",
   "entrypoints": {
     "fabric-datagen": [
       "me.roundaround.axolotlbuckets.client.data.AxolotlBucketsClientDataGenerator"
     ],
-    "main": [
-      "me.roundaround.axolotlbuckets.AxolotlBucketsMod"
-    ],
     "client": [
       "me.roundaround.axolotlbuckets.client.AxolotlBucketsClientMod"
     ]
-  },
-  "depends": {
-    "fabric-api": "*",
-    "minecraft": "1.21.*"
   },
   "custom": {
     "modmenu": {
